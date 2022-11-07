@@ -30,15 +30,15 @@
 
 
 // function addingGoal() {
-//     let bank = document.querySelector('.task-text').value
+//     let bank = document.querySelector('.task-text')
 
-//     if (bank === '') {
+//     if (bank.value == '') {
 //         return
 //     } else {
 //         listCreating()
-//         paragraph.textContent = bank
+//         paragraph.textContent = bank.value
 
-//         bank = ''
+//         bank.value = ''
 //     }
 
 // }
@@ -50,9 +50,11 @@ function listCreating() {
     const ulContainer = document.querySelector('.list-container')
     const listTask = document.createElement('li');
     
+    // textField = document.createElement('input')
     textField = document.createElement('input')
     textField.type = 'text'
     textField.setAttribute('readonly', 'readonly')
+    textField.classList.add('li-input')
 
     const buttonContainer = document.createElement('div')
 
