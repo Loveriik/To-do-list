@@ -1,57 +1,9 @@
-// let paragraph
-
-// function listCreating() {
-//     const ulContainer = document.querySelector('.list-container')
-//     const listTask = document.createElement('li');
-//     const container = document.createElement('div')
-//     const tick = document.createElement('input') 
-//     const button = document.createElement('button')
-
-//     container.classList.add('div')
-
-//     tick.type = 'checkbox'
-//     tick.classList.add('checkbox')
-//     tick.addEventListener('change', ()=> {
-//         container.classList.add('green')
-//     })
-
-//     paragraph = document.createElement('p')
-
-//     button.classList.add('delete')
-//     button.textContent = 'delete'
-//     button.addEventListener('click', () => {
-//         listTask.remove()
-//     })
-
-//     container.append(tick,paragraph,button)
-//     listTask.append(container)
-//     ulContainer.append(listTask)
-// }
-
-
-// function addingGoal() {
-//     let bank = document.querySelector('.task-text')
-
-//     if (bank.value == '') {
-//         return
-//     } else {
-//         listCreating()
-//         paragraph.textContent = bank.value
-
-//         bank.value = ''
-//     }
-
-// }
-
-
-let textField
-
-function listCreating() {
+function listCreating(value) {
     const ulContainer = document.querySelector('.list-container')
     const listTask = document.createElement('li');
     
-    // textField = document.createElement('input')
-    textField = document.createElement('input')
+    const textField = document.createElement('input')
+    textField.value = value
     textField.type = 'text'
     textField.setAttribute('readonly', 'readonly')
     textField.classList.add('li-input')
@@ -90,8 +42,7 @@ function addingGoal() {
     if (bank.value === '') {
         return
     } else {
-        listCreating()
-        textField.value = bank.value
+        listCreating(bank.value)
         bank.value = ''
     }
 }
